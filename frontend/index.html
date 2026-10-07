@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubernetes Demo Application</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      margin: 10px 0;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      width: 60%;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #b00020;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Kubernetes Demo Application</h1>
+
+<div class="card">
+  <h2>Backend</h2>
+
+  <div class="row">
+    <div class="label">Pod</div>
+    <div id="backend-pod">-</div>
+  </div>
+
+  <div class="row">
+    <div class="label">Environment</div>
+    <div id="environment">-</div>
+  </div>
+
+  <div class="row">
+    <div class="label">API_KEY</div>
+    <div id="api-key">-</div>
+  </div>
+
+  <button onclick="loadInfo()">Refresh</button>
+</div>
+
+
+<div class="card">
+  <h2>Persistent Storage</h2>
+
+  <input id="message" value="Hello Kubernetes">
+  <button onclick="writeData()">Write</button>
+  <button onclick="readData()">Read</button>
+
+  <div class="row">
+    <div class="label">Message</div>
+    <div id="data-message">-</div>
+  </div>
+
+  <div class="row">
+    <div class="label">Written By</div>
+    <div id="written-by">-</div>
+  </div>
+
+  <div class="row">
+    <div class="label">Read By</div>
+    <div id="read-by">-</div>
+  </div>
+
+  <div id="error" class="error"></div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

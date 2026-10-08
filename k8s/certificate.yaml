@@ -1,0 +1,15 @@
+# k8s/certificate.yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: k8s-demo-tls
+  namespace: k8s-demo
+spec:
+  secretName: k8s-demo-tls
+
+  dnsNames:
+    - k8s-demo.blackjackzone.me
+
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
